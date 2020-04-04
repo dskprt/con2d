@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\con2d\con2d.csproj">
-      <Project>{c922c432-d36f-4eb1-9c1a-b1c3da04b0f7}</Project>
+      <Project>{15e2baec-7245-406b-a709-902e2b40ca04}</Project>
       <Name>con2d</Name>
     </ProjectReference>
   </ItemGroup>
