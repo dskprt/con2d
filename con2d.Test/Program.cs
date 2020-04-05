@@ -28,6 +28,11 @@ namespace con2d.Test {
                 con2d = new Con2D();
                 con2d.Initialize();
             }
+            while(true) {
+                Text.Render("hello world", 200, 200);
+            }
+            Console.ReadKey();
+            return;
             con2d.Title = "purplesnek";
             Console.Clear();
             Console.CursorLeft = 50;

@@ -77,6 +77,8 @@ namespace con2d {
             public static extern uint SetPixel(IntPtr hDC, int x, int y, uint color);
             [DllImport("Gdi32.dll")]
             public static extern uint GetPixel(IntPtr hDC, int x, int y);
+            [DllImport("Gdi32.dll")]
+            public static extern bool TextOutA(IntPtr hdc, int x, int y, string lpString, int c);
 
             public static uint STD_INPUT_HANDLE = 4294967286;
 
