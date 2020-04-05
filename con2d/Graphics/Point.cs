@@ -13,5 +13,10 @@ namespace con2d.Graphics {
             if (!Con2D.GetInstance().initialized) throw new InitializationException("Con2D not initialized.");
             Con2D.External.SetPixel(Con2D.GetInstance().dc, x, y, color.ToUInt());
         }
+
+        public static Color GetPoint(int x, int y) {
+            if (!Con2D.GetInstance().initialized) throw new InitializationException("Con2D not initialized.");
+            return Color.FromUInt(Con2D.External.GetPixel(Con2D.GetInstance().dc, x, y));
+        }
     }
 }

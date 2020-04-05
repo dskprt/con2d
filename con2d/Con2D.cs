@@ -1,5 +1,7 @@
 ﻿using con2d.Exceptions;
+using con2d.Utils;
 using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace con2d {
@@ -35,7 +37,7 @@ namespace con2d {
 
             uint mode;
             
-            if(!External.GetConsoleMode(this.handle, out mode)) {
+            if(!External.GetConsoleMode(this.stdHandle, out mode)) {
                 throw new InitializationException("Failed to get current console mode.");
             }
 
@@ -73,8 +75,10 @@ namespace con2d {
 
             [DllImport("Gdi32.dll")]
             public static extern uint SetPixel(IntPtr hDC, int x, int y, uint color);
+            [DllImport("Gdi32.dll")]
+            public static extern uint GetPixel(IntPtr hDC, int x, int y);
 
-            public static uint STD_INPUT_HANDLE = 0x0010;
+            public static uint STD_INPUT_HANDLE = 4294967286;
 
             public static uint ENABLE_ECHO_INPUT = 0x0004;
             public static uint ENABLE_QUICK_EDIT_MODE = 0x0040;
